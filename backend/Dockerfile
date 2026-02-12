@@ -9,4 +9,4 @@ RUN uv sync --frozen --no-dev
 COPY . .
 ENV PATH="/.venv/bin:$PATH"
 
-CMD ["uv", "run", "uvicorn", "app.api.main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uv", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
