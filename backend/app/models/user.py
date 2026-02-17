@@ -4,7 +4,6 @@ from sqlalchemy.sql import func
 from sqlalchemy.orm import Mapped, mapped_column
 import enum
 from app.core.base import Base
-from pydantic import EmailStr
 
 
 class UserRole(enum.Enum):
@@ -21,8 +20,8 @@ class User(Base):
         primary_key=True,
         nullable=False
     )
-    email: Mapped[EmailStr] = mapped_column(
-        EmailStr,
+    email: Mapped[str] = mapped_column(
+        String,
         nullable=False
     )
     name: Mapped[str] = mapped_column(
@@ -34,7 +33,7 @@ class User(Base):
         nullable=False
     )
     role: Mapped[UserRole] = mapped_column(
-        Enum[UserRole],
+        Enum(UserRole),
         default=UserRole.user
     )
     is_active: Mapped[bool] = mapped_column(
