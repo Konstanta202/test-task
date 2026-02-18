@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+
 class Settings(BaseSettings):
 
     VERSION: str = "1.0.0"
@@ -20,14 +21,8 @@ class Settings(BaseSettings):
         host_port = f"{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
         return base_url + host_port
 
-    @property
-    def DATABASE_URL_syncpg(self):
-        base_url = f"postgresql://{self.DB_USER}:{self.DB_PASS}@"
-        host_port = f"{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
-        return base_url + host_port
-
     model_config = SettingsConfigDict(
-        env_file=".env", 
+        env_file=".env",
         env_file_encoding="utf-8",
         case_sensitive=False
     )

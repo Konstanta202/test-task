@@ -1,4 +1,3 @@
-from typing import Optional, List
 from sqlalchemy import String, Boolean, Enum, TIMESTAMP, BigInteger
 from sqlalchemy.sql import func
 from sqlalchemy.orm import Mapped, mapped_column
@@ -22,7 +21,8 @@ class User(Base):
     )
     email: Mapped[str] = mapped_column(
         String,
-        nullable=False
+        nullable=False,
+        unique=True
     )
     name: Mapped[str] = mapped_column(
         String,
