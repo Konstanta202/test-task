@@ -1,18 +1,17 @@
-"""add unique email
+"""add unique email for user table
 
-Revision ID: 858e6479e3b8
+Revision ID: f44552105606
 Revises: 780d52cffe85
-Create Date: 2026-02-18 14:38:51.410532
+Create Date: 2026-02-19 03:39:20.645064
 
 """
 from typing import Sequence, Union
 
 from alembic import op
-import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '858e6479e3b8'
+revision: str = 'f44552105606'
 down_revision: Union[str, Sequence[str], None] = '780d52cffe85'
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
