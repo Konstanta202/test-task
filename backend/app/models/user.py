@@ -28,7 +28,7 @@ class User(Base):
         String,
         nullable=False
     )
-    hash_password: Mapped[str] = mapped_column(
+    password: Mapped[str] = mapped_column(
         String,
         nullable=False
     )

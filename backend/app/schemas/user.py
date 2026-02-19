@@ -27,4 +27,3 @@ class UserCreate(BaseModel):
     email: EmailStr
     name: str
     password: str
-    retry_password: str
