@@ -1,5 +1,8 @@
 name: Test
 
+on: 
+  push
+
 jobs:
   test-jos:
     runs-on: ubuntu-latest
